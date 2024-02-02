@@ -34,24 +34,24 @@ public class Program {
                 money.report();
             } else if (choice.equalsIgnoreCase("espresso")) {
                 money.processCoins(sc);
-                money.makePaymeynt(1.5);
+                money.makePayment(1.5);
                 coffeMaker.areResourcesSufficient(cappuccino);
                 coffeMaker.makeCoffee(espresso);
-                System.out.println(espresso);
+
 
             } else if (choice.equalsIgnoreCase("latte")) {
                 money.processCoins(sc);
-                money.makePaymeynt(2.5);
+                money.makePayment(2.5);
                 coffeMaker.areResourcesSufficient(latte);
                 coffeMaker.makeCoffee(latte);
-                System.out.println(latte);
+
 
             } else if (choice.equalsIgnoreCase("cappuccino")) {
                 money.processCoins(sc);
-                money.makePaymeynt(3.0);
+                money.makePayment(3.0);
                 coffeMaker.areResourcesSufficient(cappuccino);
                 coffeMaker.makeCoffee(cappuccino);
-                System.out.println(cappuccino);
+
             }
         }
     }
