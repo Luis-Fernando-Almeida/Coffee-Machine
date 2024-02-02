@@ -29,7 +29,7 @@ public class CoffeMaker {
         System.out.println(resources);
     }
 
-    public boolean areResourcesSufficiente(MenuItem menuItem) {
+    public boolean areResourcesSufficient(MenuItem menuItem) {
         boolean canMake = true;
 
         for (Map.Entry<String, Integer> entry : menuItem.getIngredients().entrySet()) {
@@ -51,7 +51,7 @@ public class CoffeMaker {
             int requiredAmount = entry.getValue();
             resources.put(item, resources.getOrDefault(item, 0) - requiredAmount);
         }
-
         System.out.println("I have enough resources, making you a coffee!");
     }
+
 }

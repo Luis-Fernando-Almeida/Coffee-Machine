@@ -4,8 +4,8 @@ import java.util.Scanner;
 
 public class Money {
 
-    private static final String CURRENCY = "BRL";
-    private static final double[] COIN_VALUES  = {0.50,0.25,0.10,0.05};
+    private static final String CURRENCY = "REAIS";
+    private static final int[] COIN_VALUES  = {50,25,10,5};
     private double profit;
     private double moneyReceived;
 
@@ -33,14 +33,14 @@ public class Money {
     }
 
     public void report(){
-        System.out.println("Money: " + CURRENCY + profit);
+        System.out.println("Money: " + profit + " " + CURRENCY);
     }
 
     public double processCoins(Scanner sc){
-        System.out.println("Please insert coins.");
+        System.out.println("Por favor insira moedas.");
 
         for (double coinValue : COIN_VALUES){
-            System.out.println("How many " + coinValue + " coins would you like to insert?");
+            System.out.printf("Quantas moedas de %.0f centavos você vai inserir?%n", coinValue);
             int coinCount = sc.nextInt();
             moneyReceived += coinValue * coinCount;
         }
@@ -48,9 +48,8 @@ public class Money {
     }
 
     public boolean makePaymeynt(double price){
-        processCoins(new Scanner(System.in));
         if (moneyReceived >= price){
-            double change = Math.round((moneyReceived - price)*100);
+            double change = Math.round((moneyReceived - price)* 100);
             System.out.println(moneyReceived);
             System.out.println("Here is " + CURRENCY + change + "in change");
             profit += price;

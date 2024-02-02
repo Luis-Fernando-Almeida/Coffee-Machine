@@ -13,9 +13,9 @@ public class Program {
         Scanner sc = new Scanner(System.in);
 
         CoffeMaker coffeMaker = new CoffeMaker();
-        MenuItem menuItem = new MenuItem();
         Money money = new Money();
 
+        MenuItem menuItem = new MenuItem();
         MenuItem espresso = new MenuItem("Espresso", 1.5, Map.of("water", 50, "coffee", 18));
         MenuItem latte = new MenuItem("Latte", 2.5, Map.of("water", 200, "milk", 150, "coffee", 24));
         MenuItem cappuccino = new MenuItem("Cappuccino", 3.0, Map.of("water", 250, "milk", 100, "coffee", 24));
@@ -31,23 +31,27 @@ public class Program {
                 break;
             } else if (choice.equalsIgnoreCase("report")) {
                 coffeMaker.report();
+                money.report();
             } else if (choice.equalsIgnoreCase("espresso")) {
                 money.processCoins(sc);
                 money.makePaymeynt(1.5);
-                coffeMaker.areResourcesSufficiente(cappuccino);
+                coffeMaker.areResourcesSufficient(cappuccino);
                 coffeMaker.makeCoffee(espresso);
+                System.out.println(espresso);
 
             } else if (choice.equalsIgnoreCase("latte")) {
                 money.processCoins(sc);
                 money.makePaymeynt(2.5);
-                coffeMaker.areResourcesSufficiente(latte);
+                coffeMaker.areResourcesSufficient(latte);
                 coffeMaker.makeCoffee(latte);
+                System.out.println(latte);
 
             } else if (choice.equalsIgnoreCase("cappuccino")) {
                 money.processCoins(sc);
                 money.makePaymeynt(3.0);
-                coffeMaker.areResourcesSufficiente(cappuccino);
+                coffeMaker.areResourcesSufficient(cappuccino);
                 coffeMaker.makeCoffee(cappuccino);
+                System.out.println(cappuccino);
             }
         }
     }
