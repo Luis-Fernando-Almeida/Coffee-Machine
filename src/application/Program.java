@@ -22,8 +22,10 @@ public class Program {
 
         boolean machineOn = true;
         while (machineOn) {
-            System.out.println("O que você deseja? (Espresso, Latte, Cappuccino, Report, Off)");
-            String choice = sc.nextLine().toLowerCase().trim();
+            System.out.println("O que você deseja? (Espresso, Latte, Cappuccino)");
+
+            String choice = sc.nextLine().trim().toLowerCase();
+
 
             switch (choice) {
                 case "espresso":
@@ -33,6 +35,7 @@ public class Program {
                         if (money.makePayment(1.5)) {
                             coffeeMaker.makeCoffee(espresso);
                             System.out.println();
+                            sc.nextLine();
                         }
                     }
                     break;
@@ -43,6 +46,7 @@ public class Program {
                         if (money.makePayment(2.5)) {
                             coffeeMaker.makeCoffee(latte);
                             System.out.println();
+                            sc.nextLine();
                         }
                     }
                     break;
@@ -53,6 +57,7 @@ public class Program {
                         if (money.makePayment(3.0)) {
                             coffeeMaker.makeCoffee(cappuccino);
                             System.out.println();
+                            sc.nextLine();
                         }
                     }
                     break;
@@ -68,7 +73,6 @@ public class Program {
                     System.out.println();
                     break;
             }
-
         }
     }
 }
