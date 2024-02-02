@@ -24,7 +24,7 @@ public class Program {
         boolean machineOn = true;
         while (true) {
 
-            System.out.println("What would you like? (Espresso, Latte, Cappuccino, Off, Report)");
+            System.out.println("O que você deseja ? (Espresso, Latte, Cappuccino)");
             String choice = sc.nextLine();
             if (choice.equalsIgnoreCase("off")) {
                 machineOn = false;
@@ -33,24 +33,30 @@ public class Program {
                 coffeMaker.report();
                 money.report();
             } else if (choice.equalsIgnoreCase("espresso")) {
+                System.out.println("Bebida escolhida: " + espresso.getName() + " - Valor: " + espresso.getCost());
+                coffeMaker.areResourcesSufficient(cappuccino);
                 money.processCoins(sc);
                 money.makePayment(1.5);
-                coffeMaker.areResourcesSufficient(cappuccino);
                 coffeMaker.makeCoffee(espresso);
+                System.out.println();
 
 
             } else if (choice.equalsIgnoreCase("latte")) {
+                System.out.println("Bebida escolhida: " + latte.getName() + " - Valor: " + latte.getCost());
+                coffeMaker.areResourcesSufficient(latte);
                 money.processCoins(sc);
                 money.makePayment(2.5);
-                coffeMaker.areResourcesSufficient(latte);
                 coffeMaker.makeCoffee(latte);
+                System.out.println();
 
 
             } else if (choice.equalsIgnoreCase("cappuccino")) {
+                System.out.println("Bebida escolhida: " + cappuccino.getName() + " - Valor: " + cappuccino.getCost());
+                coffeMaker.areResourcesSufficient(cappuccino);
                 money.processCoins(sc);
                 money.makePayment(3.0);
-                coffeMaker.areResourcesSufficient(cappuccino);
                 coffeMaker.makeCoffee(cappuccino);
+                System.out.println();
 
             }
         }

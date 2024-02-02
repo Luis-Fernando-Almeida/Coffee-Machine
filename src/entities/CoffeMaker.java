@@ -37,7 +37,7 @@ public class CoffeMaker {
             int requiredAmount = entry.getValue();
 
             if (requiredAmount > resources.getOrDefault(item, 0)) {
-                System.out.println("Sorry, there is not enough " + item);
+                System.out.println("Desculpe, não temos: " + item);
                 canMake = false;
             }
         }
@@ -51,7 +51,7 @@ public class CoffeMaker {
             int requiredAmount = entry.getValue();
             resources.put(item, resources.getOrDefault(item, 0) - requiredAmount);
         }
-        System.out.println("I have enough resources, making you a coffee!");
+        System.out.println("Saindo um " + menuItem.getName() + "!");
     }
 
 }

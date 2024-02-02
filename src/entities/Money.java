@@ -54,7 +54,7 @@ public class Money {
             System.out.printf("Aqui está seu troco: %.2f %s%n",  change,  CURRENCY);
             profit += price;
         } else {
-            System.out.println("Sorry that's not enough money. Money refunded.");
+            System.out.println("Desculpe nõa foi inserido dinheiro o suficiente, devolvendo seu dinheiro.");
         }
         moneyReceived = 0;
     }
