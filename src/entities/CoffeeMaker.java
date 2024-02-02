@@ -3,10 +3,10 @@ package entities;
 import java.util.HashMap;
 import java.util.Map;
 
-public class CoffeMaker {
+public class CoffeeMaker {
     private Map<String, Integer> resources;
 
-    public CoffeMaker() {
+    public CoffeeMaker() {
         this.resources = new HashMap<>();
         initialResources();
     }
@@ -20,9 +20,9 @@ public class CoffeMaker {
     }
 
     private void initialResources() {
-        resources.put("water", 300);
-        resources.put("milk", 300);
-        resources.put("coffee", 300);
+        resources.put("água", 300);
+        resources.put("leite", 300);
+        resources.put("café", 300);
     }
 
     public void report() {
@@ -46,7 +46,7 @@ public class CoffeMaker {
 
     public void makeCoffee(MenuItem menuItem) {
         Map<String, Integer> ingredients = menuItem.getIngredients();
-        for (Map.Entry<String, Integer> entry : ingredients.entrySet()){
+        for (Map.Entry<String, Integer> entry : ingredients.entrySet()) {
             String item = entry.getKey();
             int requiredAmount = entry.getValue();
             resources.put(item, resources.getOrDefault(item, 0) - requiredAmount);

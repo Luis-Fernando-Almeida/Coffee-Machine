@@ -33,7 +33,7 @@ public class Money {
     }
 
     public void report(){
-        System.out.println("Money: " + profit + " " + CURRENCY);
+        System.out.println("Dinheiro: " + profit + " " + CURRENCY);
     }
 
     public double processCoins(Scanner sc){
@@ -47,15 +47,17 @@ public class Money {
         return moneyReceived;
     }
 
-    public void makePayment(double price){
+    public boolean makePayment(double price){
         if (moneyReceived >= price){
             double change = moneyReceived - price;
-            System.out.println("Valor recebido: " + moneyReceived);
+            System.out.printf("Valor recebido: %.2f %s%n ", moneyReceived, CURRENCY);
             System.out.printf("Aqui está seu troco: %.2f %s%n",  change,  CURRENCY);
             profit += price;
+            moneyReceived = 0;
+            return true;
         } else {
-            System.out.println("Desculpe nõa foi inserido dinheiro o suficiente, devolvendo seu dinheiro.");
+            System.out.println("Desculpe não foi inserido dinheiro o suficiente, devolvendo seu dinheiro.");
+            return false;
         }
-        moneyReceived = 0;
     }
 }
